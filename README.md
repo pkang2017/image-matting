@@ -1,70 +1,102 @@
 # image-matting
 
-	Poisson Matting
+##Poisson Matting
+
 In this paper, we formulate the problem of natural image matting as one of solving Poisson equations with the matte gradient field. Our approach, which we call Poisson matting, has the following advantages. First, the matte is directly reconstructed from a continuous matte gradient field by solving Poisson equations using boundary information from a user-supplied trimap. Second, by interactively manipulating the matte gradient field using a number of filtering tools, the user can further improve Poisson matting results locally until he or she is satisfied. The modified local result is seamlessly integrated into the final result. Experiments on many complex natural images demonstrate that Poisson matting can generate good matting results that are not possible using existing matting techniques.
+
 http://www.cs.jhu.edu/~misha/Fall07/Papers/Sun04.pdf
+
 https://github.com/MarcoForte/poisson-matting
 
-	Bayes Matting
+##Bayes Matting
+
 This paper proposes a new Bayesian framework for solving the matting problem, i.e. extracting a foreground element from a background image by estimating an opacity for each pixel of the foreground element. Our approach models both the foreground and background color distributions with spatiallyvarying sets of Gaussians, and assumes a fractional blending of the foreground and background colors to produce the final output. It then uses a maximum-likelihood criterion to estimate the optimal opacity, foreground and background simultaneously. In addition to providing a principled approach to the matting problem, our algorithm effectively handles objects with intricate boundaries, such as hair strands and fur, and provides an improvement over existing techniques for these difficult cases.
+
 https://github.com/MarcoForte/bayesian-matting
 
-	A Closed Form Solution to Natural Image Matting
+##A Closed Form Solution to Natural Image Matting
+
 Interactive digital matting, the process of extracting a foreground object from an image based on limited user input, is an important task in image and video editing. From a computer vision perspective, this task is extremely challenging because it is massively ill-posed — at each pixel we must estimate the foreground and the background colors, as well as the foreground opacity (“alpha matte”) from a single color measurement. Current approaches either restrict the estimation to a small part of the image, estimating foreground and background colors based on nearby pixels where they are known, or perform iterative nonlinear estimation by alternating foreground and background color estimation with alpha estimation.
+
 https://github.com/sjtrny/MatteKit
+
 http://alphamatting.com/code.php
 
-	Spectral Matting
+##Spectral Matting
+
 We present 'spectral matting': a new approach to natural image matting that automatically computes a set of fundamental fuzzy matting components from the smallest eigenvectors of a suitably defined Laplacian matrix. Thus, our approach extends spectral segmentation techniques, whose goal is to extract hard segments, to the extraction of soft matting components. These components may then be used as building blocks to easily construct semantically meaningful foreground mattes, either in an unsupervised fashion, or based on a small amount of user input. 
+
 http://alphamatting.com/code.php
+
 http://www.vision.huji.ac.il/SpectralMatting/
 
 
-	An Iterative Optimization Approach for Unified Image Segmentation and Matting
+##An Iterative Optimization Approach for Unified Image Segmentation and Matting
+
 Separating a foreground object from the background in a static image involves determining both full and partial pixel coverages, also known as extracting a matte. Previous approaches require the input image to be pre-segmented into three regions: foreground, background and unknown, which is called a trimap. Partial opacity values are then computed only for pixels inside the unknown region. This presegmentation based approach fails for images with large portions of semi-transparent foreground where the trimap is difficult to create even manually. In this paper we combine the segmentation and matting problem together and propose a unified optimization approach based on Belief Propagation. We iteratively estimate the opacity value for every pixel in the image, based on a small sample of foreground and background pixels marked by the user. Experimental results show that compared with previous approaches, our method is more efficient to extract high quality mattes for foregrounds with significant semi-transparent regions.
+
 http://juew.org/data/data.htm
 
-	Fast Matting Using Large Kernel Matting Laplacian Matrices
+##Fast Matting Using Large Kernel Matting Laplacian Matrices
+
 Image matting is of great importance in both computer vision and graphics applications. Most existing state-of-the-art techniques rely on large sparse matrices such as the matting Laplacian [12]. However, solving these linear systems is often time-consuming, which is unfavored for the user interaction. In this paper, we propose a fast method for high quality matting. We first derive an efficient algorithm to solve a large kernel matting Laplacian. A large kernel propagates information more quickly and may improve the matte quality. To further reduce running time, we also use adaptive kernel sizes by a KD-tree trimap segmentation technique. A variety of experiments show that our algorithm provides high quality results and is 5 to 20 times faster than previous methods.
+
 http://kaiminghe.com/publications/cvpr10matting.pdf
+
 https://github.com/nathanbain314/alphaMatting
 
-	Nonlocal Matting
+##Nonlocal Matting
+
 This work attempts to considerably reduce the amount of user effort in the natural image matting problem. The key observation is that the nonlocal principle, introduced to denoise images, can be successfully applied to the alpha matte to obtain sparsity in matte representation, and therefore dramatically reduce the number of pixels a user needs to manually label. We show how to avoid making the user provide redundant and unnecessary input, develop a method for clustering the image pixels for the user to label, and a method to perform high-quality matte extraction. We show that this algorithm is therefore faster, easier, and higher quality than state of the art methods.
+
 https://github.com/rocketman768/NonlocalMatting
 
+##Shared Sampling for Real-Time Alpha Matting
 
-	Shared Sampling for Real-Time Alpha Matting
 Image matting aims at extracting foreground elements from an image by means of color and opacity (alpha) estimation. While a lot of progress has been made in recent years on improving the accuracy of matting techniques, one common problem persisted: the low speed of matte computation. We present the first real-time matting technique for natural images and videos. Our technique is based on the observation that, for small neighborhoods, pixels tend to share similar attributes. Therefore, independently treating each pixel in the unknown regions of a trimap results in a lot of redundant work. We show how this computation can be significantly and safely reduced by means of a careful selection of pairs of background and foreground samples. Our technique achieves speedups of up to two orders of magnitude compared to previous ones, while producing high-quality alpha mattes. The quality of our results has been verified through an independent benchmark. The speed of our technique enables, for the first time, real-time alpha matting of videos, and has the potential to enable a new class of exciting applications.
+
 http://www.inf.ufrgs.br/~eslgastal/SharedMatting/
 
-	Learning Based Digital Matting
+##Learning Based Digital Matting
+
 We cast some new insights into solving the digital matting problem by treating it as a semi-supervised learning task in machine learning. A local learning based approach and a global learning based approach are then produced, to fit better the scribble based matting and the trimap based matting, respectively. Our approaches are easy to implement because only some simple matrix operations are needed. They are also extremely accurate because they can efficiently handle the nonlinear local color distributions by incorporating the kernel trick, that are beyond the ability of many previous works. Our approaches can outperform many recent matting methods, as shown by the theoretical analysis and comprehensive experiments. The new insights may also inspire several more works.
+
 https://www.mathworks.com/matlabcentral/fileexchange/31412-learning-based-digital-matting
+
 https://github.com/MarcoForte/learning-based-matting
 
+##Learning based alpha matting using support vector regression
 
-	Learning based alpha matting using support vector regression
 Alpha matting refers to the problem of estimating the opacity mask of the foreground in an image. Many recent algorithms solve it with color samples or some local assumptions, causing artifacts when they fail to collect appropriate samples or the assumptions do not hold. In this paper, we treat alpha matting as a supervised learning problem and propose a new matting approach. Given the input image and a trimap (labeling some foreground/background pixels), we segment the unlabeled region into pieces and learn the relations between pixel features and alpha values for these pieces. We use support vector regression (SVR) in the learning process. To obtain better learning results, we design a training samples selection method and use adaptive parameters for SVR. Qualitative and quantitative evaluations on a matting benchmark show that our approach outperforms many recent algorithms in terms of accuracy.
+
 https://zhzhanp.github.io/papers/ICIP2012.pdf
+
 https://github.com/Sunting78/effective-SVR-Matting
 
+##An Alternative Matting Laplacian
 
-	An Alternative Matting Laplacian
 Cutting out and object and estimate its transparency mask is a key task in many applications. We take on the work on closed-form matting by Levin et al.[1], that is used at the core of many matting techniques, and propose an alternative formulation that offers more flexible controls over the matting priors. We also show that this new approach is efficient at upscaling transparency maps from coarse estimates.
+
 https://github.com/frcs/alternative-matting-laplacian
 
-	A Global Sampling Method for Alpha Matting
+##A Global Sampling Method for Alpha Matting
+
 Alpha matting refers to the problem of softly extracting the foreground from an image. Given a trimap (specifying known foreground/background and unknown pixels), a straightforward way to compute the alpha value is to sample some known foreground and background colors for each unknown pixel. Existing sampling-based matting methods often collect samples near the unknown pixels only. They fail if good samples cannot be found nearby. In this paper, we propose a global sampling method that uses all samples available in the image. Our global sample set avoids missing good samples. A simple but effective cost function is defined to tackle the ambiguity in the sample selection process. To handle the computational complexity introduced by the large number of samples, we pose the sampling task as a correspondence problem. The correspondence search is efficiently achieved by generalizing a randomized algorithm previously designed for patch matching[3]. A variety of experiments show that our global sampling method produces both visually and quantitatively high-quality matting results.
+
 https://github.com/atilimcetin/global-matting
+
 https://github.com/atilimcetin/guided-filter
 
-	KNN matting
+##KNN matting
+
 We are interested in a general alpha matting approach for the simultaneous extraction of multiple image layers; each layer may have disjoint segments for material matting not limited to foreground mattes typical of natural image matting. The estimated alphas also satisfy the summation constraint. Our approach does not assume the local color-line model, does not need sophisticated sampling strategies, and generalizes well to any color or feature space in any dimensions. Our matting technique, aptly called KNN matting, capitalizes on the nonlocal principle by using K nearest neighbors (KNN) in matching nonlocal neighborhoods, and contributes a simple and fast algorithm giving competitive results with sparse user markups. KNN matting has a closed-form solution that can leverage on the preconditioned conjugate gradient method to produce an efficient implementation. Experimental evaluation on benchmark datasets indicates that our matting results are comparable to or of higher quality than state of the art methods.
+
 http://dingzeyu.li/projects/knn/
 
-	Image Matting with Local and Nonlocal Smooth Priors
+##Image Matting with Local and Nonlocal Smooth Priors
+
 In this paper we propose a novel alpha matting method with local and nonlocal smooth priors. We observe that the manifold preserving editing propagation [4] essentially introduced a nonlocal smooth prior on the alpha matte. This nonlocal smooth prior and the well known local smooth prior from matting Laplacian complement each other. So we combine them with a simple data term from color sampling in a graph model for nature image matting. Our method has a closed-form solution and can be solved efficiently. Compared with the state-of-the-art methods, our method produces more accurate results according to the evaluation on standard benchmark datasets.
+
 https://github.com/criminalking/image-matting
 
 	Improving image matting using comprehensive sample sets
