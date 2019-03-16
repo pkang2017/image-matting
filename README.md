@@ -176,3 +176,8 @@ http://www.cse.cuhk.edu.hk/leojia/projects/automatting/index.html
 
 https://github.com/lizhengwei1992/Fast_Portrait_Segmentation
 
+https://arxiv.org/abs/1809.01354
+
+https://github.com/lizhengwei1992/Semantic_Human_Matting
+
+https://arxiv.org/abs/1901.03814
